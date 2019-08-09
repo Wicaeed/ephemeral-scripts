@@ -5,7 +5,7 @@ Requires=ephemeral-disk.service ephemeral-data.mount
 # TODO: list the units using the ephemeral storage that should be started
 # after mounting the storage
 Before=
-ConditionPathIsMountPoint=/ephemeral/data
+ConditionPathIsMountPoint=/mnt/resources
 
 [Install]
 WantedBy=local-fs.target

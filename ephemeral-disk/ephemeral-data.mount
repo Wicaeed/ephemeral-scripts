@@ -10,6 +10,6 @@ RequiredBy=ephemeral-units.service
 
 [Mount]
 EnvironmentFile=/etc/default/ephemeral-disk
-What=/dev/mapper/ephemeral-data
+What=/mnt/resources
 Type=${MOUNT_FSTYPE}
 Options=${MOUNT_OPTIONS}
