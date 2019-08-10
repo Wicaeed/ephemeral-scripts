@@ -1,15 +1,15 @@
 [Unit]
 Description=Run services using ephemeral disk
-After=ephemeral-disk.service ephemeral-data.mount
-Requires=ephemeral-disk.service ephemeral-data.mount
+After=mnt-disk.service mknt-resource.mount
+Requires=mnt-disk.service mnt-resource.mount
 # TODO: list the units using the ephemeral storage that should be started
 # after mounting the storage
 Before=
-ConditionPathIsMountPoint=/mnt/resources
+ConditionPathIsMountPoint=/mnt/resource
 
 [Install]
 WantedBy=local-fs.target
-RequiredBy=ephemeral-disk.service ephemeral-data.mount
+RequiredBy=mnt-disk.service mnt-resource.mount
 
 [Service]
 Type=oneshot

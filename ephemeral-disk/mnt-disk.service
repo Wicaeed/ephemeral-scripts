@@ -1,0 +1,15 @@
+[Unit]
+Description=Setup ephemeral disk
+Requires=mnt-resource.mount mnt-units.service
+Before=mnt-resource.mount mnt-units.service
+ConditionPathIsMountPoint=!/mnt/resource
+
+[Install]
+WantedBy=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/ephemeral-scripts/mnt-resource_start
+TimeoutStartSec=300
+ExecStop=/etc/ephemeral-scripts/mnt-resource_stop

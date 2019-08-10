@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount the ephemeral resource partition
+Requires=mnt-disk.service mnt-units.service
+Before=mnt-units.service
+After=mnt-disk.service
+
+[Install]
+WantedBy=local-fs.target
+RequiredBy=mnt-units.service
+
+[Mount]
+EnvironmentFile=/etc/default/mnt-disk
+What=/dev/sdc1
+Type=${MOUNT_FSTYPE}
+Options=${MOUNT_OPTIONS}

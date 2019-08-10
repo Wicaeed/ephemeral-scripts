@@ -1,5 +1,5 @@
 # ephemeral disks (coma separated list)
-DISKS=/dev/xvdb
+DISKS=/dev/sdc
 
 # filesystem type
 MOUNT_FSTYPE=ext4
@@ -8,7 +8,7 @@ MOUNT_FSTYPE=ext4
 MOUNT_OPTIONS="defaults,nofail,noatime,nodev,nosuid"
 
 # mountpoint *** DON'T CHANGE THIS SETTING ***
-MOUNT_PATH=/mnt/resources
+MOUNT_PATH=/mnt/resource
 
 # destroy on stop
 DESTROY_ON_STOP=1
